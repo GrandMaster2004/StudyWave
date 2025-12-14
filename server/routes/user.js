@@ -19,7 +19,6 @@ const { auth } = require("../middlewares/auth")
 // Routes
 //                                      Authentication routes
 
-
 // Route for user login
 router.post("/login", login)
 

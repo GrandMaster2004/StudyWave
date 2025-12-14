@@ -1,8 +1,8 @@
-const Profiles = require('../models/Profiles');
-const Users = require('../models/Users');
+const Profiles = require("../models/Profiles")
+const Users = require("../models/Users")
 const CourseProgress = require("../models/CourseProgress")
 const Courses = require("../models/Courses")
-const {cloudinaryImageUpload} = require('../utils/imageUpload');
+const { cloudinaryImageUpload } = require("../utils/imageUpload")
 const mongoose = require("mongoose")
 const { convertSecondsToDuration } = require("../utils/secToDuration")
 
@@ -48,7 +48,6 @@ exports.updateProfile = async (req, res) => {
       updatedUserDetails,
     })
   } catch (error) {
-  
     return res.status(500).json({
       success: false,
       error: error.message,
@@ -59,7 +58,7 @@ exports.updateProfile = async (req, res) => {
 exports.deleteAccount = async (req, res) => {
   try {
     const id = req.payload.id
- 
+
     const user = await Users.findById({ _id: id })
     if (!user) {
       return res.status(404).json({
@@ -96,9 +95,7 @@ exports.deleteAccount = async (req, res) => {
 exports.getAllUserDetails = async (req, res) => {
   try {
     const id = req.payload.id
-    const userDetails = await Users.findById(id)
-      .populate("profile")
-      .exec()
+    const userDetails = await Users.findById(id).populate("profile").exec()
     // console.log(userDetails)
     res.status(200).json({
       success: true,
@@ -108,7 +105,7 @@ exports.getAllUserDetails = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       success: false,
-      data : "here",
+      data: "here",
       message: error.message,
     })
   }
@@ -230,14 +227,14 @@ exports.instructorDashboard = async (req, res) => {
       return courseDataWithStats
     })
 
-    res.status(200).json({ 
-        courses: courseData 
+    res.status(200).json({
+      courses: courseData,
     })
   } catch (error) {
     console.error(error)
     res.status(500).json({
-         message: "Server Error" 
-        })
+      message: "Server Error",
+    })
   }
 }
 

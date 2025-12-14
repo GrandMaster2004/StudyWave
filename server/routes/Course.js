@@ -13,7 +13,7 @@ const {
   editCourse,
   getInstructorCourses,
   deleteCourse,
-} = require("../controllers/CourseController");
+} = require("../controllers/CourseController")
 
 // Tags Controllers Import
 
@@ -50,7 +50,12 @@ const {
   getProgressPercentage,
 } = require("../controllers/courseProgress")
 // Importing Middlewares
-const { auth, isInstructor, isStudent, isAdmin } = require("../middlewares/auth")
+const {
+  auth,
+  isInstructor,
+  isStudent,
+  isAdmin,
+} = require("../middlewares/auth")
 
 // ********************************************************************************************************
 //                                      Course routes
@@ -87,7 +92,6 @@ router.post("/updateCourseProgress", auth, isStudent, updateCourseProgress)
 // Delete a Course
 router.delete("/deleteCourse", deleteCourse)
 
-
 //                                      Category routes (Only by Admin)
 
 // Category can Only be Created by Admin
@@ -95,7 +99,6 @@ router.delete("/deleteCourse", deleteCourse)
 router.post("/createCategory", auth, isAdmin, createCategory)
 router.get("/showAllCategories", showAllCategories)
 router.post("/getCategoryPageDetails", categoryPageDetails)
-
 
 //                                      Rating and Review
 router.post("/createRating", auth, isStudent, createRating)

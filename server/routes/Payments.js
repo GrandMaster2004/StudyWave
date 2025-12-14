@@ -1,4 +1,4 @@
- // Import the required modules
+// Import the required modules
 const express = require("express")
 const router = express.Router()
 const {
@@ -8,7 +8,12 @@ const {
   sendPaymentSuccessEmail,
 } = require("../controllers/payment")
 
-const { auth, isInstructor, isStudent, isAdmin } = require("../middlewares/auth")
+const {
+  auth,
+  isInstructor,
+  isStudent,
+  isAdmin,
+} = require("../middlewares/auth")
 router.post("/capturePayment", auth, isStudent, capturePayment)
 router.post("/verifyPayment", auth, isStudent, verifyPayment)
 router.post(

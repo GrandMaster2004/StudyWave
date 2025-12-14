@@ -66,9 +66,9 @@ exports.createCourse = async (req, res) => {
     // console.log("File to be uplaoded...",File);
     // try {
     const imgUploaded = await cloudinaryImageUpload(
-        File,
-        process.env.CLOUDINARY_FOLDER
-      )
+      File,
+      process.env.CLOUDINARY_FOLDER
+    )
     // } catch (error) {
     //   return res.send(500).json({
     //     success: false,
@@ -88,7 +88,7 @@ exports.createCourse = async (req, res) => {
       status: status,
       instructions,
     })
-    
+
     await Users.findByIdAndUpdate(
       {
         _id: instructorDetail._id,
@@ -100,10 +100,10 @@ exports.createCourse = async (req, res) => {
       },
       { new: true }
     )
-    
+
     // console.log("here")
     const categoryDetails2 = await Categories.findByIdAndUpdate(
-      { _id: categoryDetails._id, },
+      { _id: categoryDetails._id },
       {
         $push: {
           course: newCourse._id,
@@ -128,7 +128,7 @@ exports.createCourse = async (req, res) => {
 exports.getAllCourses = async (req, res) => {
   try {
     const allCourses = await Courses.find(
-              { status: "Published" },
+      { status: "Published" },
       {
         courseName: true,
         price: true,
@@ -137,7 +137,9 @@ exports.getAllCourses = async (req, res) => {
         ratingAndReviews: true,
         studentsEnrolled: true,
       }
-    ).populate("instructor").exec()
+    )
+      .populate("instructor")
+      .exec()
 
     return res.status(200).json({
       success: true,
@@ -164,13 +166,13 @@ exports.getCourseDetails = async (req, res) => {
     }
 
     const courseDetail = await Courses.findById(courseId)
-      .populate({ 
+      .populate({
         path: "courseContent",
         populate: {
           path: "subSection",
           select: "-videoUrl",
-        }, 
-    })
+        },
+      })
       .populate({
         path: "ratingAndReviews",
         populate: {
@@ -185,7 +187,7 @@ exports.getCourseDetails = async (req, res) => {
           select: "gender",
         },
       })
-            .populate({
+      .populate({
         path: "instructor",
         populate: {
           path: "profile",
@@ -193,7 +195,7 @@ exports.getCourseDetails = async (req, res) => {
       })
       .populate("category")
 
-      if (!courseDetail) {
+    if (!courseDetail) {
       return res.status(400).json({
         success: false,
         message: `Could not find course with id: ${courseId}`,
@@ -299,7 +301,7 @@ exports.getFullCourseDetails = async (req, res) => {
 exports.editCourse = async (req, res) => {
   try {
     const { courseId } = req.body
-    const updates = {...req.body}
+    const updates = { ...req.body }
     const course = await Courses.findById(courseId)
 
     if (!course) {

@@ -11,14 +11,14 @@ exports.contactUsController = async (req, res) => {
       contactUsEmail(email, firstname, lastname, message, phoneNo, countrycode)
     )
     // console.log("here")
-    
+
     return res.json({
       success: true,
       message: "Email send successfully",
     })
   } catch (error) {
     // console.log("Error", error)
-   
+
     return res.json({
       success: false,
       message: "Something went wrong...",

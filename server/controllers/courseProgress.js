@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const Sections = require('../models/Sections')
+const Sections = require("../models/Sections")
 const SubSections = require("../models/SubSections")
 const CourseProgress = require("../models/CourseProgress")
 const Courses = require("../models/Courses")
@@ -12,8 +12,8 @@ exports.updateCourseProgress = async (req, res) => {
     // Check if the subsection is valid
     const subsection = await SubSections.findById(subsectionId)
     if (!subsection) {
-      return res.status(404).json({ 
-        error: "Invalid subsection" 
+      return res.status(404).json({
+        error: "Invalid subsection",
       })
     }
 
@@ -33,8 +33,8 @@ exports.updateCourseProgress = async (req, res) => {
     } else {
       // If course progress exists, check if the subsection is already completed
       if (courseProgress.completedVideos.includes(subsectionId)) {
-        return res.status(400).json({ 
-          error: "Subsection already completed" 
+        return res.status(400).json({
+          error: "Subsection already completed",
         })
       }
 
@@ -46,13 +46,13 @@ exports.updateCourseProgress = async (req, res) => {
     await courseProgress.save()
 
     return res.status(200).json({
-       message: "Course progress updated" 
-      })
+      message: "Course progress updated",
+    })
   } catch (error) {
     console.error(error)
-    return res.status(500).json({ 
-      error: "Internal server error"
-     })
+    return res.status(500).json({
+      error: "Internal server error",
+    })
   }
 }
 
