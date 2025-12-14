@@ -20,8 +20,8 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(
   cors({
-    // origin: "https://techascend-frontend.vercel.app",
-    origin: "http://localhost:3000",
+    origin: "https://study-wave-beta.vercel.app",
+    // origin: "http://localhost:3000",
     credentials: true,
   })
 )
