@@ -75,7 +75,7 @@ exports.contactUsEmail = (
   <body>
       <div class="container">
           <a href="#"><img class="logo"
-                  src="https://res.cloudinary.com/dxt0jq7d1/image/upload/v1754518895/rzp_logo_n6nqcv.png" alt="TechAscend Logo"></a>
+                  src="https://th.bing.com/th/id/OIP.8TYqXi6fL8iA4hJb14RFJwAAAA?o=7&cb=ucfimg2&rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="TechClasses Logo"></a>
           <div class="message">Contact Form Confirmation</div>
           <div class="body">
               <p>Dear ${firstname} ${lastname},</p>
@@ -89,7 +89,7 @@ exports.contactUsEmail = (
               <p>We appreciate your interest and will get back to you shortly. </p>
           </div>
           <div class="support">If you have any further questions or need immediate assistance, please feel free to reach
-              out to us at <a href="mailto:info@techascend.com">info@techascend.com</a>. We are here to help!</div>
+              out to us at <a href="mailto:info@techclass.com">info@techclasses.com</a>. We are here to help!</div>
       </div>
   </body>
   

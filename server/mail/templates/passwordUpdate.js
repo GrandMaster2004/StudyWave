@@ -56,7 +56,7 @@ exports.passwordUpdated = (email, name) => {
     <body>
         <div class="container">
             <a href="#"><img class="logo"
-                    src="https://res.cloudinary.com/dxt0jq7d1/image/upload/v1754518895/rzp_logo_n6nqcv.png" alt="TechAscend Logo"></a>
+                    src="https://th.bing.com/th/id/OIP.8TYqXi6fL8iA4hJb14RFJwAAAA?o=7&cb=ucfimg2&rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="TechClasses Logo"></a>
             <div class="message">Password Update Confirmation</div>
             <div class="body">
                 <p>Hey ${name},</p>
@@ -66,7 +66,7 @@ exports.passwordUpdated = (email, name) => {
             </div>
             <div class="support">If you have any questions or need further assistance, please feel free to reach out to us
                 at
-                <a href="mailto:info@techascend.com">info@techascend.com</a>. We are here to help!
+                <a href="mailto:info@techclasses.com">info@techclasses.com</a>. We are here to help!
             </div>
         </div>
     </body>

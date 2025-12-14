@@ -15,7 +15,7 @@ const mailSender = async (email, title ,body) => {
 
 // Wrap in an async IIFE so we can use await.
         const info = await transporter.sendMail({
-        from: `"TechAscend" <${process.env.MAIL_USER}>`,
+        from: `"TechClasses" <${process.env.MAIL_USER}>`,
         to: `${email}`,
         subject: `${title}`,
         html: `${body}`, // HTML body

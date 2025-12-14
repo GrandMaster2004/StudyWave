@@ -67,18 +67,18 @@ const otpTemplate = (otp) => {
 	<body>
 		<div class="container">
 			<a href="#"><img class="logo"
-					src="https://res.cloudinary.com/dxt0jq7d1/image/upload/v1754518895/rzp_logo_n6nqcv.png" alt="TechAscend Logo"></a>
+					src="https://th.bing.com/th/id/OIP.8TYqXi6fL8iA4hJb14RFJwAAAA?o=7&cb=ucfimg2&rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="TechClasses Logo"></a>
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
 				<p>Dear User,</p>
-				<p>Thank you for registering with TechAscend. To complete your registration, please use the following OTP
+				<p>Thank you for registering with TechClasses. To complete your registration, please use the following OTP
 					(One-Time Password) to verify your account:</p>
 				<h2 class="highlight">${otp}</h2>
 				<p>This OTP is valid for 5 minutes. If you did not request this verification, please disregard this email.
 				Once your account is verified, you will have access to our platform and its features.</p>
 			</div>
 			<div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-					href="mailto:info@techascend.com">info@techascend.com</a>. We are here to help!</div>
+					href="mailto:info@techclasses.com">info@techclasses.com</a>. We are here to help!</div>
 		</div>
 	</body>
 	
